@@ -30,9 +30,9 @@ except ImportError:
 GITHUB_TOKEN  = os.environ.get("GITHUB_TOKEN", "")   # Personal access token; empty = unauthenticated (60 req/hr)
 TEST_MODE     = False         # If True, process only TEST_SIZE pull requests
 TEST_SIZE     = 10           # Number of pull requests to process in TEST_MODE
-START_DATE    = "4/1/2026"    # Inclusive start date (M/D/YYYY)
-END_DATE      = "6/30/2026"   # Inclusive end date (M/D/YYYY)
-LOG_DIR       = "logs"
+START_DATE    = "7/1/2026"    # Inclusive start date (M/D/YYYY)
+END_DATE      = "9/30/2026"   # Inclusive end date (M/D/YYYY)
+LOG_DIR       = r"C:\projects\PKM-General\05 - Project Work\OpenDataPhilly"
 LOG_BASE_NAME = "odp-summarize-changes"
 REPO_URL      = "https://github.com/opendataphilly/opendataphilly-jkan/"
 
@@ -335,8 +335,6 @@ def main():
     start_date = _parse_config_date(START_DATE)
     end_date   = _parse_config_date(END_DATE)
     run_ts     = datetime.datetime.now()
-
-    os.makedirs(LOG_DIR, exist_ok=True)
 
     start_str = start_date.strftime("%Y-%m-%d")
     end_str   = end_date.strftime("%Y-%m-%d")
