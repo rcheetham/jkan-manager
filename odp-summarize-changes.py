@@ -30,8 +30,8 @@ except ImportError:
 GITHUB_TOKEN  = os.environ.get("GITHUB_TOKEN", "")   # Personal access token; empty = unauthenticated (60 req/hr)
 TEST_MODE     = False         # If True, process only TEST_SIZE pull requests
 TEST_SIZE     = 10           # Number of pull requests to process in TEST_MODE
-START_DATE    = "7/1/2026"    # Inclusive start date (M/D/YYYY)
-END_DATE      = "9/30/2026"   # Inclusive end date (M/D/YYYY)
+START_DATE    = "10/1/2026"    # Inclusive start date (M/D/YYYY)
+END_DATE      = "12/31/2026"   # Inclusive end date (M/D/YYYY)
 LOG_DIR       = r"C:\projects\PKM-General\05 - Project Work\OpenDataPhilly"
 LOG_BASE_NAME = "odp-summarize-changes"
 REPO_URL      = "https://github.com/opendataphilly/opendataphilly-jkan/"
@@ -294,14 +294,14 @@ def build_output(new_ds, updated_ds, stats):
     lines = []
 
     # Email-ready section
-    lines += ["**New Datasets**", ""]
+    lines += ["**New Datasets and Applications**", ""]
     if new_ds:
         for d in new_ds:
             lines.append(_fmt_line(d))
     else:
         lines.append("_(none)_")
 
-    lines += ["", "**Updated Datasets**", ""]
+    lines += ["", "**Updated Datasets and Applications**", ""]
     if updated_ds:
         for d in updated_ds:
             line = _fmt_line(d)
